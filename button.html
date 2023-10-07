@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Load More Cards</title>
+    <style>
+        /* CSS for card container */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* CSS for individual card */
+        .card {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+        }
+
+        /* CSS for the "Load More" button */
+        #load-more-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container" id="card-container">
+        <!-- Initial set of cards -->
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+    </div>
+    
+    <button id="load-more-button">Load More Cards</button>
+
+    <script>
+        // JavaScript to handle loading more cards
+        document.getElementById('load-more-button').addEventListener('click', function() {
+            // Create a new card and append it to the card container
+            const cardContainer = document.getElementById('card-container');
+            const newCard = document.createElement('div');
+            newCard.classList.add('card');
+            newCard.textContent = 'New Card';
+            cardContainer.appendChild(newCard);
+        });
+    </script>
+</body>
+</html>
